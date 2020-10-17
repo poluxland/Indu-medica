@@ -1,227 +1,359 @@
-<div class="page-header">
-  <%= link_to servicios_path, class: 'btn btn-primary' do %>
-    Servicios
-  <% end %>
-  <%= link_to edit_servicio_path(@servicio), class: 'btn btn-primary' do %>
-    Editar
-  <% end %>
-  <h1>Servicio</h1>
+
+<div class="invoice-box" style="min-height:900px;">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="4">
+        <table>
+          <tr><td class="title"><img src="/logo.svg" style="width:100%; max-width:80px;"></td>
+            <td>
+        </table>
+      </td>
+    </tr>
+    <tr class="information">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td>Tesla<br> Almirante Barroso 640<br> Valparaiso</td>
+            <td>+56 3 2259 1548 <i class="fas fa-phone-square-alt"></i>
+            <br>info@tesla.cl <i class="fas fa-phone-square-alt"></i>
+            <br>Otros <i class="fas fa-phone-square-alt"></i>
+            <br></td>
+          </tr>
+        </table>
+        <h2>Servicio Nº <%= @servicio.id %> <br> </h2><br>
+      </td>
+    </tr>
+    <tr class="heading">
+      <td>Cliente</td>
+      <td>Fecha</td>
+      <td>Serie equipo</td>
+      <td>Actualización</td>
+    </tr>
+
+    <tr>
+      <td><%= @servicio.cliente.nombre %></td>
+      <td><%= @servicio.fecha %></td>
+      <td><%= @servicio.equipo.serie %></td>
+      <td></td>
+    </tr>
+
+    </table>
+    <table>
+    <br>
+    <tr class="heading">
+      <td>Chequeo estatico</td>
+      <td>Estado</td>
+      <td>Chequeo dinamico</td>
+      <td>Estado</td>
+    </tr>
+    <tr class="item">
+      <td >Enchufes</td>
+      <td><%= @servicio.enchufes %></td>
+      <td>Partida normal:</td>
+      <td><%= @servicio.partida_normal %></td>
+    </tr>
+    <tr class="item">
+      <td>Cables</td>
+      <td><%= @servicio.cables %></td>
+      <td>Vibraciones y ruido:</td>
+      <td><%= @servicio.vibraciones_y_ruido %></td>
+    </tr>
+    <tr class="item">
+      <td>Conecciones:</td>
+      <td><%= @servicio.conecciones %></td>
+      <td>Luces e indicacdores:</td>
+      <td><%= @servicio.luces_e_indicacdores %></td>
+    </tr>
+    <tr class="item">
+      <td>Estructura:</td>
+      <td><%= @servicio.estructura %></td>
+      <td>Direccion de ventiladores:</td>
+      <td><%= @servicio.direccion_de_ventiladores %></td>
+    </tr>
+    <tr class="item">
+      <td>Corrosion:</td>
+      <td><%= @servicio.corrosion %></td>
+      <td>Nivel de aceite:</td>
+      <td><%= @servicio.nivel_de_aceite %></td>
+    </tr>
+    <tr class="item">
+      <td>Bases:</td>
+      <td><%= @servicio.bases %></td>
+      <td>Nivel de refrigerante:</td>
+      <td><%= @servicio.nivel_de_refrigerante %></td>
+    </tr>
+    <tr class="item">
+      <td>Ventiladores:</td>
+      <td><%= @servicio.ventiladores %></td>
+      <td>Pruebas de funcionamiento:</td>
+      <td><%= @servicio.pruebas_de_funcionamiento %></td>
+    </tr>
+    <tr class="item">
+      <td>Condensador:</td>
+      <td><%= @servicio.condensador %></td>
+      <td>Alarmas:</td>
+      <td><%= @servicio.alarmas %></td>
+    </tr>
+    <tr class="item">
+      <td>Compresor:</td>
+      <td><%= @servicio.compresor %></td>
+      <td>Sobrecalor:</td>
+      <td><%= @servicio.sobrecalor %></td>
+    </tr>
+    <tr class="item">
+      <td>Evapodador:</td>
+      <td><%= @servicio.evapodador %></td>
+      <td>Presion de succion:</td>
+      <td><%= @servicio.presion_de_succion %></td>
+    </tr>
+    <tr class="item">
+      <td>Linea refrigetante:</td>
+      <td><%= @servicio.linea_refrigetante %></td>
+      <td>Sobrecalentamiento:</td>
+      <td><%= @servicio.sobrecalentamiento %></td>
+    </tr>
+    <tr class="item">
+      <td>Aislacion:</td>
+      <td><%= @servicio.aislacion %></td>
+      <td>Presion de descarga:</td>
+      <td><%= @servicio.presion_de_descarga %></td>
+    </tr>
+    <tr class="item">
+      <td>Correas:</td>
+      <td><%= @servicio.correas %></td>
+      <td>Tarjeta de control:</td>
+      <td><%= @servicio.tarjeta_de_control %></td>
+    </tr>
+    <tr class="item">
+      <td>Lubricacion:</td>
+      <td><%= @servicio.lubricacion %></td>
+    </tr>
+    <tr class="item">
+      <td>Drenajes:</td>
+      <td><%= @servicio.drenajes %></td>
+
+
+
+    </tr>
+    <tr class="item">
+      <td>Filtro de aire:</td>
+      <td><%= @servicio.filtro_de_aire %></td>
+
+
+    </tr>
+    <tr class="item">
+      <td>Carcasa:</td>
+      <td><%= @servicio.carcasa %></td>
+    </tr>
+
+    <tr class="heading">
+      <td>Parametros de lectura</td>
+      <td>F1</td>
+      <td>F2</td>
+      <td>F3</td>
+    </tr>
+
+    <tr class="item">
+      <td>Compresor<%= @servicio.compresor_f1 %></td>
+      <td><%= @servicio.compresor_f2 %></td>
+      <td><%= @servicio.compresor_f3 %></td>
+      <td><%= @servicio.compresor_m %></td>
+    </tr>
+    <tr class="item">
+      <td>Ventilador compresor<%= @servicio.ventilador_compresor_f1 %></td>
+      <td><%= @servicio.ventilador_compresor_f2 %></td>
+      <td><%= @servicio.ventilador_compresor_f3 %></td>
+      <td><%= @servicio.ventilador_compresor_m %></td>
+    </tr>
+    <tr class="item">
+      <td>Ventilador evaporador<%= @servicio.ventilador_evaporador_inyeccion_f1 %></td>
+      <td><%= @servicio.ventilador_evaporador_inyeccion_f2 %></td>
+      <td><%= @servicio.ventilador_evapodar_f3 %></td>
+      <td><%= @servicio.ventilador_evaporador_m %></td>
+    </tr>
+    <tr class="item">
+      <td>Ventilador retorno<%= @servicio.ventilador_retorno_f1 %></td>
+      <td><%= @servicio.ventilador_retorno_f2 %></td>
+      <td><%= @servicio.ventilador_retorno_f3 %></td>
+      <td><%= @servicio.ventilador_retorno_m %></td>
+    </tr>
+    <tr class="item">
+      <td>Calefactor<%= @servicio.calefactor_f1 %></td>
+      <td><%= @servicio.calefactor_f2 %></td>
+      <td><%= @servicio.calefactor_f3 %></td>
+      <td><%= @servicio.calefactor_m %></td>
+    </tr>
+    <tr class="item">
+      <td>Tension total<%= @servicio.tension_total_f1 %></td>
+      <td><%= @servicio.tension_total_f2 %></td>
+      <td><%= @servicio.tension_total_f3 %></td>
+      <td><%= @servicio.tension_total_m %></td>
+
+    </tr>
+
+
+
+
+    <tr class="heading"><td colspan="4">Observaciones</td></tr>
+    <tr class="details">
+    </tr>
+      <br>
+      <tr class="item">
+        <td>Imagen 1<%= @servicio.imagen_1 %></td>
+        <td>Imagen 2<%= @servicio.imagen_2 %></td>
+        <td>Imagen 3<%= @servicio.imagen_3 %></td>
+        <td>Codigo QR<%= @servicio.codigo_qr %></td>
+
+      </tr>
+      <tr class="item">
+        <td>Otros<%= @servicio.otros %></td>
+        <td><%= @servicio.detalles %></td>
+        <td><%= @servicio.insumos_repuestos %></td>
+        <td><%= @servicio.firma_solicitante %></td>
+
+
+      </tr>
+      <td><%= @servicio.firma_tecnico %></td>
+      <td><%= @servicio.servicio %></td>
+      <tr class="item">
+
+
+      </tr>
+
+
+
+
+
+  </table>
+
+<br><div  style="font-size: 12px;">
+Validez de la oferta: 15 Dias<br>
+El valor de la oferta considera:<br>
+Herramientas: Set estándar y asociados a la tarea<br>
+EPP : Básicos y aosicados a la tarea<br>
+Supervisión y prevención de riesgos<br>
+Planificación, Evaluación y desarrollo de la tarea<br></div>
 </div>
-
-<dl class="dl-horizontal">
-  <dt>Fecha:</dt>
-  <dd><%= @servicio.fecha %></dd>
-
-  <dt>Cliente:</dt>
-  <dd><%= @servicio.cliente.nombre %></dd>
-
-  <dt>Equipo:</dt>
-  <dd><%= @servicio.equipo.serie %></dd>
-
-  <dt>Enchufes:</dt>
-  <dd><%= @servicio.enchufes %></dd>
-
-  <dt>Cables:</dt>
-  <dd><%= @servicio.cables %></dd>
-
-  <dt>Conecciones:</dt>
-  <dd><%= @servicio.conecciones %></dd>
-
-  <dt>Estructura:</dt>
-  <dd><%= @servicio.estructura %></dd>
-
-  <dt>Corrosion:</dt>
-  <dd><%= @servicio.corrosion %></dd>
-
-  <dt>Bases:</dt>
-  <dd><%= @servicio.bases %></dd>
-
-  <dt>Ventiladores:</dt>
-  <dd><%= @servicio.ventiladores %></dd>
-
-  <dt>Condensador:</dt>
-  <dd><%= @servicio.condensador %></dd>
-
-  <dt>Compresor:</dt>
-  <dd><%= @servicio.compresor %></dd>
-
-  <dt>Evapodador:</dt>
-  <dd><%= @servicio.evapodador %></dd>
-
-  <dt>Linea refrigetante:</dt>
-  <dd><%= @servicio.linea_refrigetante %></dd>
-
-  <dt>Aislacion:</dt>
-  <dd><%= @servicio.aislacion %></dd>
-
-  <dt>Correas:</dt>
-  <dd><%= @servicio.correas %></dd>
-
-  <dt>Lubricacion:</dt>
-  <dd><%= @servicio.lubricacion %></dd>
-
-  <dt>Drenajes:</dt>
-  <dd><%= @servicio.drenajes %></dd>
-
-  <dt>Filtro de aire:</dt>
-  <dd><%= @servicio.filtro_de_aire %></dd>
-
-  <dt>Carcasa:</dt>
-  <dd><%= @servicio.carcasa %></dd>
-
-  <dt>Partida normal:</dt>
-  <dd><%= @servicio.partida_normal %></dd>
-
-  <dt>Vibraciones y ruido:</dt>
-  <dd><%= @servicio.vibraciones_y_ruido %></dd>
-
-  <dt>Luces e indicacdores:</dt>
-  <dd><%= @servicio.luces_e_indicacdores %></dd>
-
-  <dt>Direccion de ventiladores:</dt>
-  <dd><%= @servicio.direccion_de_ventiladores %></dd>
-
-  <dt>Nivel de aceite:</dt>
-  <dd><%= @servicio.nivel_de_aceite %></dd>
-
-  <dt>Nivel de refrigerante:</dt>
-  <dd><%= @servicio.nivel_de_refrigerante %></dd>
-
-  <dt>Pruebas de funcionamiento:</dt>
-  <dd><%= @servicio.pruebas_de_funcionamiento %></dd>
-
-  <dt>Alarmas:</dt>
-  <dd><%= @servicio.alarmas %></dd>
-
-  <dt>Sobrecalor:</dt>
-  <dd><%= @servicio.sobrecalor %></dd>
-
-  <dt>Sobrecalentamiento:</dt>
-  <dd><%= @servicio.sobrecalentamiento %></dd>
-
-  <dt>Presion de succion:</dt>
-  <dd><%= @servicio.presion_de_succion %></dd>
-
-  <dt>Presion de descarga:</dt>
-  <dd><%= @servicio.presion_de_descarga %></dd>
-
-  <dt>Tarjeta de control:</dt>
-  <dd><%= @servicio.tarjeta_de_control %></dd>
-
-  <dt>Compresor f1:</dt>
-  <dd><%= @servicio.compresor_f1 %></dd>
-
-  <dt>Compresor f2:</dt>
-  <dd><%= @servicio.compresor_f2 %></dd>
-
-  <dt>Compresor f3:</dt>
-  <dd><%= @servicio.compresor_f3 %></dd>
-
-  <dt>Compresor m:</dt>
-  <dd><%= @servicio.compresor_m %></dd>
-
-  <dt>Ventilador compresor f1:</dt>
-  <dd><%= @servicio.ventilador_compresor_f1 %></dd>
-
-  <dt>Ventilador compresor f2:</dt>
-  <dd><%= @servicio.ventilador_compresor_f2 %></dd>
-
-  <dt>Ventilador compresor f3:</dt>
-  <dd><%= @servicio.ventilador_compresor_f3 %></dd>
-
-  <dt>Ventilador compresor m:</dt>
-  <dd><%= @servicio.ventilador_compresor_m %></dd>
-
-  <dt>Ventilador evaporador inyeccion f1:</dt>
-  <dd><%= @servicio.ventilador_evaporador_inyeccion_f1 %></dd>
-
-  <dt>Ventilador evaporador inyeccion f2:</dt>
-  <dd><%= @servicio.ventilador_evaporador_inyeccion_f2 %></dd>
-
-  <dt>Ventilador evapodar f3:</dt>
-  <dd><%= @servicio.ventilador_evapodar_f3 %></dd>
-
-  <dt>Ventilador evaporador m:</dt>
-  <dd><%= @servicio.ventilador_evaporador_m %></dd>
-
-  <dt>Ventilador retorno f1:</dt>
-  <dd><%= @servicio.ventilador_retorno_f1 %></dd>
-
-  <dt>Ventilador retorno f2:</dt>
-  <dd><%= @servicio.ventilador_retorno_f2 %></dd>
-
-  <dt>Ventilador retorno f3:</dt>
-  <dd><%= @servicio.ventilador_retorno_f3 %></dd>
-
-  <dt>Ventilador retorno m:</dt>
-  <dd><%= @servicio.ventilador_retorno_m %></dd>
-
-  <dt>Calefactor f1:</dt>
-  <dd><%= @servicio.calefactor_f1 %></dd>
-
-  <dt>Calefactor f2:</dt>
-  <dd><%= @servicio.calefactor_f2 %></dd>
-
-  <dt>Calefactor f3:</dt>
-  <dd><%= @servicio.calefactor_f3 %></dd>
-
-  <dt>Calefactor m:</dt>
-  <dd><%= @servicio.calefactor_m %></dd>
-
-  <dt>Cable poder f1:</dt>
-  <dd><%= @servicio.cable_poder_f1 %></dd>
-
-  <dt>Cable poder f2:</dt>
-  <dd><%= @servicio.cable_poder_f2 %></dd>
-
-  <dt>Cable poder f3:</dt>
-  <dd><%= @servicio.cable_poder_f3 %></dd>
-
-  <dt>Cable poder m:</dt>
-  <dd><%= @servicio.cable_poder_m %></dd>
-
-  <dt>Tension total f1:</dt>
-  <dd><%= @servicio.tension_total_f1 %></dd>
-
-  <dt>Tension total f2:</dt>
-  <dd><%= @servicio.tension_total_f2 %></dd>
-
-  <dt>Tension total f3:</dt>
-  <dd><%= @servicio.tension_total_f3 %></dd>
-
-  <dt>Tension total m:</dt>
-  <dd><%= @servicio.tension_total_m %></dd>
-
-  <dt>Detalles:</dt>
-  <dd><%= @servicio.detalles %></dd>
-
-  <dt>Insumos repuestos:</dt>
-  <dd><%= @servicio.insumos_repuestos %></dd>
-
-  <dt>Firma solicitante:</dt>
-  <dd><%= @servicio.firma_solicitante %></dd>
-
-  <dt>Firma tecnico:</dt>
-  <dd><%= @servicio.firma_tecnico %></dd>
-
-  <dt>Imagen 1:</dt>
-  <dd><%= @servicio.imagen_1 %></dd>
-
-  <dt>Imagen 2:</dt>
-  <dd><%= @servicio.imagen_2 %></dd>
-
-  <dt>Imagen 3:</dt>
-  <dd><%= @servicio.imagen_3 %></dd>
-
-  <dt>Codigo qr:</dt>
-  <dd><%= @servicio.codigo_qr %></dd>
-
-  <dt>Otros:</dt>
-  <dd><%= @servicio.otros %></dd>
-
-
-
-  <dt>Servicio:</dt>
-  <dd><%= @servicio.servicio %></dd>
-
-</dl>
+<br>
+<div class="botones">
+  <div class="d-flex justify-content-center">
+  <%= link_to 'Editar', edit_servicio_path(@servicio), class: "btn btn-primary shadow" %>&nbsp;
+  <%= link_to 'Volver', servicios_path, class: "btn btn-primary shadow" %>   &nbsp;
+  <%= link_to "Imprimir", '#', class: "btn btn-primary shadow", onclick: "printpage()" %>
+  <br>
+  </div>
+</div>
+<style>
+
+    .invoice-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    font-size: 14px;
+
+    color: #555;
+  }
+
+  .invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+  }
+
+  .invoice-box table tr td:nth-child(n+2) {
+    text-align: right;
+  }
+
+  .invoice-box table tr.top table td {
+    padding-bottom: 20px;
+  }
+
+  .invoice-box table tr.information table td {
+    padding-bottom: 40px;
+  }
+
+  .invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+  }
+
+    @media print {
+      .foot,.botones, .alert
+       {
+        display: none !important;
+      }
+
+
+    .invoice-box {
+      max-width: 900px !important;
+      margin: auto !important;
+      padding: 30px !important;
+      border: 1px solid #eee !important;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .15) !important;
+      font-size: 14px;
+
+      color: #555 !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+    .invoice-box table {
+      width: 100%;
+      line-height: inherit !important;
+      text-align: left !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+
+
+    .invoice-box table tr td:nth-child(n+2) {
+      text-align: right !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+    .invoice-box table tr.top table td {
+      padding-bottom: 20px !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+
+
+    .invoice-box table tr.information table td {
+      padding-bottom: 40px !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+    .invoice-box table tr.heading td {
+      background: #eee !important;
+      border-bottom: 1px solid #ddd !important;
+      font-weight: bold !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+
+  }
+</style>
+
+<script>
+  function printpage()
+  {
+     window.print()
+  }
+
+</script>
