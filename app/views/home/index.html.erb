@@ -1,24 +1,24 @@
 
 <div class="container">
   <div class="card-deck">
-    <div class="card">
+    <div class="card zoom">
       <a href="<%= brus_path %>">
-        <%= image_tag ("bru.jpg") , :class => "card-img-top img-fluid" %>
-      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">BRU</h2></div>
+        <%= image_tag ("1.jpg") , :class => "card-img-top img-fluid"%>
+      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Cliente</h2></div>
       </a>
     </div>
 
-    <div class="card">
+    <div class="card zoom">
       <a href="<%= checklists_path %>">
-        <%= image_tag ("lvs.jpg") , :class => "card-img-top img-fluid" %>
-      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Checklist BRU</h2></div>
+        <%= image_tag ("5.png") , :class => "card-img-top img-fluid" %>
+      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Mantención</h2></div>
       </a>
     </div>
 
-    <div class="card">
+    <div class="card zoom">
       <a href="<%= cuasis_path %>">
-        <%= image_tag ("cuasi.jpg") , :class => "card-img-top img-fluid" %>
-      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Registrar Cuasi</h2></div>
+        <%= image_tag ("3.jpg") , :class => "card-img-top img-fluid" %>
+      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Equipos</h2></div>
       </a>
     </div>
 
@@ -26,25 +26,25 @@
 
 <div class="w-100 p-2"></div>
 
-<div class="card">
+<div class="card zoom">
   <a href="<%= canchas_path %>">
-    <%= image_tag ("canchas.jpg") , :class => "card-img-top img-fluid" %>
-  <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Canchas</h2></div>
+    <%= image_tag ("4.jpg") , :class => "card-img-top img-fluid" %>
+  <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold"></h2></div>
   </a>
 </div>
 
-<div class="card">
+<div class="card zoom">
   <a href="<%= mmpps_path %>">
-    <%= image_tag ("mmpp.jpg") , :class => "card-img-top img-fluid" %>
-  <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">MMPP</h2></div>
+    <%= image_tag ("2.jpg") , :class => "card-img-top img-fluid" %>
+  <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold"></h2></div>
   </a>
 </div>
 
 
-      <div class="card">
+      <div class="card zoom">
         <a href="<%= privacy_path %>">
-          <%= image_tag ("reporte.jpg") , :class => "card-img-top img-fluid" %>
-        <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Reporte</h2></div>
+          <%= image_tag ("6.jpg") , :class => "card-img-top img-fluid" %>
+        <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Reportes</h2></div>
         </a>
       </div>
 
@@ -54,3 +54,23 @@
 
     </div>
 </div>
+
+
+
+<style>
+  /* [1] The container */
+  .zoom {
+    height: 250px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+  }
+
+  /* [2] Transition property for smooth transformation of images */
+  .zoom img {
+    transition: transform .5s ease;
+  }
+
+  /* [3] Finally, transforming the image when container gets hovered */
+  .zoom:hover img {
+    transform: scale(1.2) rotate(1deg);
+  }
+</style>
