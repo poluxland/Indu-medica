@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modelo_ue: MyString
+  modelo_ui: MyString
+  ubicacion_ue: MyString
+  ubicacion_ui: MyString
+  año: MyString
+  serie: MyString
+  gas: MyString
+  voltaje: MyString
+  oficinas: MyString
+  nombre_oficinas: MyString
+  unidad_master: MyString
+  cliente: one
+
+two:
+  modelo_ue: MyString
+  modelo_ui: MyString
+  ubicacion_ue: MyString
+  ubicacion_ui: MyString
+  año: MyString
+  serie: MyString
+  gas: MyString
+  voltaje: MyString
+  oficinas: MyString
+  nombre_oficinas: MyString
+  unidad_master: MyString
+  cliente: two

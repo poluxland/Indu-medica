@@ -1,0 +1,25 @@
+
+<%= simple_form_for(@equipo) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :cliente, label_method: :nombre, value_method: :id %>
+    <%= f.input :nombre_oficinas, label: 'Nombre equipo', collection: [ "Split Muro", "Piso Cielo", "Cassette", "Compacto", "Ventana", "Split Ducto", "VRV"] %>
+    <%= f.input :modelo_ue %>
+    <%= f.input :modelo_ui %>
+    <%= f.input :ubicacion_ue %>
+    <%= f.input :ubicacion_ui %>
+    <%= f.input :año %>
+    <%= f.input :serie %>
+    <%= f.input :gas, collection: [ "R22", "R404", "R407", "R134A", "Otro"] %>
+    <%= f.input :voltaje, collection: [ "Monofasico", "Trifasico"] %>
+    <%= f.input :oficinas %>
+    <%= f.input :unidad_master %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,50 @@
+<div class="page-header">
+  <%= link_to equipos_path, class: 'btn btn-default' do %>
+    All Equipos
+  <% end %>
+  <%= link_to edit_equipo_path(@equipo), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Equipo</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cliente:</dt>
+  <dd><%= @equipo.cliente.nombre %></dd>
+  <dt>Nombre</dt>
+  <dd><%= @equipo.nombre_oficinas %></dd>
+  <dt>Modelo ue:</dt>
+  <dd><%= @equipo.modelo_ue %></dd>
+
+  <dt>Modelo ui:</dt>
+  <dd><%= @equipo.modelo_ui %></dd>
+
+  <dt>Ubicacion ue:</dt>
+  <dd><%= @equipo.ubicacion_ue %></dd>
+
+  <dt>Ubicacion ui:</dt>
+  <dd><%= @equipo.ubicacion_ui %></dd>
+
+  <dt>Año:</dt>
+  <dd><%= @equipo.año %></dd>
+
+  <dt>Serie:</dt>
+  <dd><%= @equipo.serie %></dd>
+
+  <dt>Gas:</dt>
+  <dd><%= @equipo.gas %></dd>
+
+  <dt>Voltaje:</dt>
+  <dd><%= @equipo.voltaje %></dd>
+
+  <dt>Oficinas:</dt>
+  <dd><%= @equipo.oficinas %></dd>
+
+
+
+  <dt>Unidad master:</dt>
+  <dd><%= @equipo.unidad_master %></dd>
+
+
+
+</dl>

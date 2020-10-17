@@ -1,0 +1,183 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Servicios</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_servicio_path, class: 'btn btn-primary' do %>
+    Nuevo Servicio
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+
+
+            <th>Cliente</th>
+            <th>Equipo</th>
+            <th>Enchufes</th>
+            <th>Cables</th>
+            <th>Conecciones</th>
+            <th>Estructura</th>
+            <th>Corrosion</th>
+            <th>Bases</th>
+            <th>Ventiladores</th>
+            <th>Condensador</th>
+            <th>Compresor</th>
+            <th>Evapodador</th>
+            <th>Linea refrigetante</th>
+            <th>Aislacion</th>
+            <th>Correas</th>
+            <th>Lubricacion</th>
+            <th>Drenajes</th>
+            <th>Filtro de aire</th>
+            <th>Carcasa</th>
+            <th>Partida normal</th>
+            <th>Vibraciones y ruido</th>
+            <th>Luces e indicacdores</th>
+            <th>Direccion de ventiladores</th>
+            <th>Nivel de aceite</th>
+            <th>Nivel de refrigerante</th>
+            <th>Pruebas de funcionamiento</th>
+            <th>Alarmas</th>
+            <th>Sobrecalor</th>
+            <th>Sobrecalentamiento</th>
+            <th>Presion de succion</th>
+            <th>Presion de descarga</th>
+            <th>Tarjeta de control</th>
+            <th>Compresor f1</th>
+            <th>Compresor f2</th>
+            <th>Compresor f3</th>
+            <th>Compresor m</th>
+            <th>Ventilador compresor f1</th>
+            <th>Ventilador compresor f2</th>
+            <th>Ventilador compresor f3</th>
+            <th>Ventilador compresor m</th>
+            <th>Ventilador evaporador inyeccion f1</th>
+            <th>Ventilador evaporador inyeccion f2</th>
+            <th>Ventilador evapodar f3</th>
+            <th>Ventilador evaporador m</th>
+            <th>Ventilador retorno f1</th>
+            <th>Ventilador retorno f2</th>
+            <th>Ventilador retorno f3</th>
+            <th>Ventilador retorno m</th>
+            <th>Calefactor f1</th>
+            <th>Calefactor f2</th>
+            <th>Calefactor f3</th>
+            <th>Calefactor m</th>
+            <th>Cable poder f1</th>
+            <th>Cable poder f2</th>
+            <th>Cable poder f3</th>
+            <th>Cable poder m</th>
+            <th>Tension total f1</th>
+            <th>Tension total f2</th>
+            <th>Tension total f3</th>
+            <th>Tension total m</th>
+            <th>Detalles</th>
+            <th>Insumos repuestos</th>
+            <th>Firma solicitante</th>
+            <th>Firma tecnico</th>
+            <th>Imagen 1</th>
+            <th>Imagen 2</th>
+            <th>Imagen 3</th>
+            <th>Codigo qr</th>
+            <th>Otros</th>
+            <th>Fecha</th>
+            <th>Servicio</th>
+
+          <th></th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @servicios.each do |servicio| %>
+        <%= content_tag :tr, id: dom_id(servicio), class: dom_class(servicio) do %>
+
+
+                      <td><%= servicio.cliente.nombre %></td>
+                      <td><%= servicio.equipo.nombre_oficinas %></td>
+                      <td><%= servicio.enchufes %></td>
+                      <td><%= servicio.cables %></td>
+                      <td><%= servicio.conecciones %></td>
+                      <td><%= servicio.estructura %></td>
+                      <td><%= servicio.corrosion %></td>
+                      <td><%= servicio.bases %></td>
+                      <td><%= servicio.ventiladores %></td>
+                      <td><%= servicio.condensador %></td>
+                      <td><%= servicio.compresor %></td>
+                      <td><%= servicio.evapodador %></td>
+                      <td><%= servicio.linea_refrigetante %></td>
+                      <td><%= servicio.aislacion %></td>
+                      <td><%= servicio.correas %></td>
+                      <td><%= servicio.lubricacion %></td>
+                      <td><%= servicio.drenajes %></td>
+                      <td><%= servicio.filtro_de_aire %></td>
+                      <td><%= servicio.carcasa %></td>
+                      <td><%= servicio.partida_normal %></td>
+                      <td><%= servicio.vibraciones_y_ruido %></td>
+                      <td><%= servicio.luces_e_indicacdores %></td>
+                      <td><%= servicio.direccion_de_ventiladores %></td>
+                      <td><%= servicio.nivel_de_aceite %></td>
+                      <td><%= servicio.nivel_de_refrigerante %></td>
+                      <td><%= servicio.pruebas_de_funcionamiento %></td>
+                      <td><%= servicio.alarmas %></td>
+                      <td><%= servicio.sobrecalor %></td>
+                      <td><%= servicio.sobrecalentamiento %></td>
+                      <td><%= servicio.presion_de_succion %></td>
+                      <td><%= servicio.presion_de_descarga %></td>
+                      <td><%= servicio.tarjeta_de_control %></td>
+                      <td><%= servicio.compresor_f1 %></td>
+                      <td><%= servicio.compresor_f2 %></td>
+                      <td><%= servicio.compresor_f3 %></td>
+                      <td><%= servicio.compresor_m %></td>
+                      <td><%= servicio.ventilador_compresor_f1 %></td>
+                      <td><%= servicio.ventilador_compresor_f2 %></td>
+                      <td><%= servicio.ventilador_compresor_f3 %></td>
+                      <td><%= servicio.ventilador_compresor_m %></td>
+                      <td><%= servicio.ventilador_evaporador_inyeccion_f1 %></td>
+                      <td><%= servicio.ventilador_evaporador_inyeccion_f2 %></td>
+                      <td><%= servicio.ventilador_evapodar_f3 %></td>
+                      <td><%= servicio.ventilador_evaporador_m %></td>
+                      <td><%= servicio.ventilador_retorno_f1 %></td>
+                      <td><%= servicio.ventilador_retorno_f2 %></td>
+                      <td><%= servicio.ventilador_retorno_f3 %></td>
+                      <td><%= servicio.ventilador_retorno_m %></td>
+                      <td><%= servicio.calefactor_f1 %></td>
+                      <td><%= servicio.calefactor_f2 %></td>
+                      <td><%= servicio.calefactor_f3 %></td>
+                      <td><%= servicio.calefactor_m %></td>
+                      <td><%= servicio.cable_poder_f1 %></td>
+                      <td><%= servicio.cable_poder_f2 %></td>
+                      <td><%= servicio.cable_poder_f3 %></td>
+                      <td><%= servicio.cable_poder_m %></td>
+                      <td><%= servicio.tension_total_f1 %></td>
+                      <td><%= servicio.tension_total_f2 %></td>
+                      <td><%= servicio.tension_total_f3 %></td>
+                      <td><%= servicio.tension_total_m %></td>
+                      <td><%= servicio.detalles %></td>
+                      <td><%= servicio.insumos_repuestos %></td>
+                      <td><%= servicio.firma_solicitante %></td>
+                      <td><%= servicio.firma_tecnico %></td>
+                      <td><%= servicio.imagen_1 %></td>
+                      <td><%= servicio.imagen_2 %></td>
+                      <td><%= servicio.imagen_3 %></td>
+                      <td><%= servicio.codigo_qr %></td>
+                      <td><%= servicio.otros %></td>
+                      <td><%= servicio.fecha %></td>
+                      <td><%= servicio.servicio %></td>
+
+
+            <td><%= link_to 'Show', servicio %></td>
+
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
